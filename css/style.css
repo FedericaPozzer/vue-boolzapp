@@ -75,7 +75,7 @@ img {
     overflow: scroll;
 
     /* debug */
-    background-color: aqua;
+    background-image: url(../img/mine.jpg);
 }
 
 /***** MAIN *****/
@@ -126,4 +126,31 @@ img {
 
 .message-bar {
     width: 80%;
+}
+
+/** MAIN - messages - main **/
+
+.messages-main .received-container,
+.messages-main .sent-container {
+    width: 50%;
+
+    /* debug */
+    background-color: aqua;
+    border: 2px dashed black;
+}
+
+.msg-received,
+.msg-sent {
+    width: 60%;
+    /* margin: auto; */
+    
+
+    /* debug */
+    height: 50px;
+    background-color: #009688;
+}
+
+.messages-main .time {
+    font-size: .7rem;
+    color: lightgray;
 }
