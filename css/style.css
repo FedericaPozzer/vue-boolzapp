@@ -166,23 +166,9 @@ img {
 
 /** MAIN - messages - main **/
 
-.messages-main .received-container,
-.messages-main .sent-container {
-    width: 50%;
-    /* display: block; */
-
-    /* debug */
-    /* background-color: aqua;
-    border: 2px dashed black; */
-}
-
 .msg-received,
 .msg-sent {
-    width: 60%;
-    
-    /* debug */
-    /* height: 50px; */
-    /* background-color: #009688; */
+    width: 30%;
 }
 
 .msg-received {
@@ -197,6 +183,8 @@ img {
     font-size: .7rem;
     color: lightgray;
 }
+
+
 
 .messages-footer {
     background-color: var(--beige);
