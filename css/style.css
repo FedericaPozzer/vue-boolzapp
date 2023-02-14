@@ -2,8 +2,6 @@
 
 ul {
     list-style: none;
-    margin: 0;
-    padding-left: .5rem;
 }
 
 a {
@@ -29,6 +27,20 @@ img {
             #d9dbd3 100%);
 }
 
+/* Colors */
+:root {
+    --beige: #eaeaea;
+    --white: #ffffff;
+    --lightblue: #8edafc;
+    --lightgrey: #c2c5c5;
+    --lightgreen: #d5f9ba;
+}
+
+/* Specials */
+.active-contact {
+    background-color: var(--lightgrey);
+}
+
 
 /********** MAIN - layout **********/
 
@@ -40,26 +52,54 @@ img {
     height: 86vh;
     overflow: hidden;
 
+    background-color: var(--beige);
     /* debug */
-    border: 1px solid black;
-    background-color: palevioletred;
+    /* border: 1px solid black;
+    background-color: palevioletred; */
 }
 
-.section-contacts,
-.section-messages {
-    padding: 0;
+.contacts-header {
+    border-right: 1px solid var(--lightgrey);
+}
 
-    /* debug */
-    border: 2px solid grey;
+.contacts-header-favicons,
+.messages-header-favicons {
+    color: var(--lightgrey);
+}
+
+.notifications-bar {
+    background-color: var(--lightblue);
+}
+
+.fa-bell-slash {
+    background-color: var(--white);
+    color: var(--lightblue);
+    width: 2.7rem;
+    height: 2.7rem;
+    border-radius: 50%;
+    line-height: 2.7rem;
+    font-size: 1.3rem;
 }
 
 .main .contacts-header,
 .main .messages-header {
     height: 10%;
     
-
     /* debug */
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
+}
+
+.contacts-list {
+    background-color: var(--white);
+}
+
+.contacts-list li {
+    border-bottom: 1px solid var(--lightgrey);
+}
+
+.contacts-list:last-child {
+    /* debug aiut boh */
+    /* padding-bottom: 4.3rem; */
 }
 
 .main .contacts-main {
@@ -67,61 +107,57 @@ img {
     overflow: scroll;
 
     /* debug */
-    background-color: aqua;
+    /* background-color: aqua; */
 }
+
+
+
+/***** MAIN *****/
 
 .main .messages-main {
     height: 80%;
     overflow: scroll;
 
-    /* debug */
     background-image: url(../img/mine.jpg);
 }
 
-/***** MAIN *****/
-
 /** Main - users **/
-
-.notifications-bar {
-    /* debug */
-    border: 1px solid black;
-}
 
 .notifications-bar p {
     margin: .5rem;
 }
 
 .search-bar {
+    background-color: var(--beige);
+
     /* debug */
-    border: 1px solid black;
+    /* border: 1px solid black; */
+}
+
+.fa-magnifying-glass {
+    color: var(--lightgrey);
+}
+
+.input-group-text {
+    background-color: var(--white);
 }
 
 .contact-avatar img {
     height: 2.5rem;
 }
 
-.contacts-list li {
-    /* debug */
-    border: 1px solid black;
-}
-
 
 /** MAIN - messages **/
 
-.section-messages > div {
-    /* debug */
-    border: 1px solid black;
+.messages-header .navbar {
+    height: 100%;
 }
 
 .section-messages .messages-footer {
     height: 10%;
 
     /* debug */
-    background-color: aquamarine;
-}
-
-.messages-header .navbar {
-    height: 100%;
+    /* background-color: aquamarine; */
 }
 
 .message-bar {
@@ -133,24 +169,40 @@ img {
 .messages-main .received-container,
 .messages-main .sent-container {
     width: 50%;
+    /* display: block; */
 
     /* debug */
-    background-color: aqua;
-    border: 2px dashed black;
+    /* background-color: aqua;
+    border: 2px dashed black; */
 }
 
 .msg-received,
 .msg-sent {
     width: 60%;
-    /* margin: auto; */
     
-
     /* debug */
-    height: 50px;
-    background-color: #009688;
+    /* height: 50px; */
+    /* background-color: #009688; */
+}
+
+.msg-received {
+    background-color: var(--white);
+}
+
+.msg-sent {
+    background-color: var(--lightgreen);
 }
 
 .messages-main .time {
     font-size: .7rem;
     color: lightgray;
+}
+
+.messages-footer {
+    background-color: var(--beige);
+    border-left: 1px solid var(--lightgrey)
+}
+
+.messages-footer i {
+    color: grey;
 }
