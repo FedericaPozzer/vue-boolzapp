@@ -1,4 +1,4 @@
-/* ALL */
+/*** ALL ***/
 
 ul {
     list-style: none;
@@ -10,12 +10,13 @@ a {
     text-decoration: none;
 }
 
+img {
+    border-radius: 50%;
+}
+
 .navbar {
     width: 100%;
 }
-
-
-/* MY CSS */
 
 /* Background */
 .background-bicolor {
@@ -28,13 +29,16 @@ a {
             #d9dbd3 100%);
 }
 
-/* MAIN */
+
+/********** MAIN - layout **********/
+
 #container-main {
     padding-top: 7vh;    
 }
 
 .main {
     height: 86vh;
+    overflow: hidden;
 
     /* debug */
     border: 1px solid black;
@@ -43,12 +47,14 @@ a {
 
 .section-contacts,
 .section-messages {
-    padding-left: 0;
+    padding: 0;
+
     /* debug */
     border: 2px solid grey;
 }
 
-.main .section-header {
+.main .contacts-header,
+.main .messages-header {
     height: 10%;
     
 
@@ -56,16 +62,26 @@ a {
     background-color: aquamarine;
 }
 
-.main .section-main {
+.main .contacts-main {
     height: 90%;
+    overflow: scroll;
 
     /* debug */
     background-color: aqua;
 }
 
-/* Main - section users */
-    
-    /* section users - main */
+.main .messages-main {
+    height: 80%;
+    overflow: scroll;
+
+    /* debug */
+    background-color: aqua;
+}
+
+/***** MAIN *****/
+
+/** Main - users **/
+
 .notifications-bar {
     /* debug */
     border: 1px solid black;
@@ -82,10 +98,32 @@ a {
 
 .contact-avatar img {
     height: 2.5rem;
-    border-radius: 50%;
 }
 
 .contacts-list li {
     /* debug */
     border: 1px solid black;
+}
+
+
+/** MAIN - messages **/
+
+.section-messages > div {
+    /* debug */
+    border: 1px solid black;
+}
+
+.section-messages .messages-footer {
+    height: 10%;
+
+    /* debug */
+    background-color: aquamarine;
+}
+
+.messages-header .navbar {
+    height: 100%;
+}
+
+.message-bar {
+    width: 80%;
 }
