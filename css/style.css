@@ -1,0 +1,91 @@
+/* ALL */
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding-left: .5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar {
+    width: 100%;
+}
+
+
+/* MY CSS */
+
+/* Background */
+.background-bicolor {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom,
+            #009688 0%,
+            #009688 15%,
+            #d9dbd3 15%,
+            #d9dbd3 100%);
+}
+
+/* MAIN */
+#container-main {
+    padding-top: 7vh;    
+}
+
+.main {
+    height: 86vh;
+
+    /* debug */
+    border: 1px solid black;
+    background-color: palevioletred;
+}
+
+.section-contacts,
+.section-messages {
+    padding-left: 0;
+    /* debug */
+    border: 2px solid grey;
+}
+
+.main .section-header {
+    height: 10%;
+    
+
+    /* debug */
+    background-color: aquamarine;
+}
+
+.main .section-main {
+    height: 90%;
+
+    /* debug */
+    background-color: aqua;
+}
+
+/* Main - section users */
+    
+    /* section users - main */
+.notifications-bar {
+    /* debug */
+    border: 1px solid black;
+}
+
+.notifications-bar p {
+    margin: .5rem;
+}
+
+.search-bar {
+    /* debug */
+    border: 1px solid black;
+}
+
+.contact-avatar img {
+    height: 2.5rem;
+    border-radius: 50%;
+}
+
+.contacts-list li {
+    /* debug */
+    border: 1px solid black;
+}
