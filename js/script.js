@@ -191,6 +191,13 @@ const app = Vue.createApp({
             
 
         }
+    },
+
+    methods : {
+        selectedContact(i) {
+            alert("click" + " " + i);
+            // non ho più idee
+        },
     }
 })
 app.mount("#my-app");

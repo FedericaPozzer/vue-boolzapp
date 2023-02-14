@@ -95,6 +95,7 @@ img {
 
 .contacts-list li {
     border-bottom: 1px solid var(--lightgrey);
+    cursor: pointer;
 }
 
 .contacts-list:last-child {

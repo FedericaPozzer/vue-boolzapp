@@ -91,7 +91,8 @@
                             <ul class="contacts-list ps-0">
  <!-- active.contact -->
                                 <li class="d-flex"
-                                v-for="(contact, i) of contacts">
+                                v-for="(contact, i) of contacts"
+                                @click="selectedContact(i)">
                                     <div class="contact-avatar align-self-center ms-2">
                                         <img :src=" './img/avatar' + contact.avatar + '.jpg' " alt="">
                                     </div>
@@ -116,12 +117,13 @@
                         <nav class="navbar p-0">
                         
                             <div class="container-fluid">
-                                <a class="navbar-brand d-flex align-items-center" href="#">
+                                <a class="navbar-brand d-flex align-items-center" 
+                                href="#">
 
                                     <img src="./img/avatar_1.jpg" alt="Logo" width="50" height="50">
 
                                     <div class="ms-3">
-                                        <p class="mb-0">Michele</p>
+                                        <p class="mb-0"> Michele </p>
                                         <p class="fw-lighter small mb-0">Ultimo accesso oggi alle 12:00</p>
                                     </div>
 
