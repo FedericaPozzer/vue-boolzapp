@@ -174,11 +174,13 @@ img {
     width: 30%;
 }
 
-.msg-received {
+.msg-received,
+.received {
     background-color: var(--white);
 }
 
-.msg-sent {
+.msg-sent,
+.sent {
     background-color: var(--lightgreen);
 }
 
@@ -186,8 +188,6 @@ img {
     font-size: .7rem;
     color: lightgray;
 }
-
-
 
 .messages-footer {
     background-color: var(--beige);
