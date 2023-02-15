@@ -171,13 +171,13 @@ img {
 
 .received {
     background-color: var(--white);
-    width: 30%;
+    width: 37%;
 }
 
 .sent {
     background-color: var(--lightgreen);
     align-self: flex-end;
-    width: 30%;
+    width: 37%;
     margin-right: 3rem;
 }
 

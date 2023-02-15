@@ -13,7 +13,9 @@
 
 // MILESTONE 3
     // * Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
+        // ? ok!
     // * Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo
+        // ? suppongo serva un set timeout.. sul keyup? MA devo anche creare un nuovo messaggio.. how?
 
 // MILESTONE 4
     // * Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite(es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
@@ -303,37 +305,59 @@ const app = Vue.createApp({
                 // },
             ],
 
+            // indice "di partenza"
             selected_index : 0,
 
+            // coso vuoto in cui andrà il mio nuovo messaggio
             new_msg : {
                 date: '15/02/2023 17:15:00',
                 text: '',
                 status: 'sent'
+            },
+
+             // coso precompliato in risposta al mio messaggio
+            auto_answer : {
+                date: '15/02/2023 17:15:00',
+                text: 'Ok!',
+                status: 'received'
             }
 
         }
     },
 
     methods : {
+        // funzione per selezionare il contatto
         selectedContact(i) {
                 // alert("click" + " " + i);
             this.selected_index = i;
         },
 
-
+        // funzione per mandare un nuovo messaggio
         sendMsg() {
-            console.log(this.new_msg); // proxy
+            // console.log(this.new_msg); // proxy
 
+            // trasfromazione in un non-proxy
             const copy_notProxy = {
                 ...this.new_msg,
             }
 
-            this.new_msg.text.push(copy_notProxy);
+            // magia nera
+            let ciao = this.contacts[this.selected_index];
+            ciao.messages.push(copy_notProxy);
+
+
+            
+
+            // io che tento invano di farmi rispondere da tizio
+            let auto_answer = this.contacts[this.selected_index];
+            auto_answer.messages.push(auto_answer);
 
 
 
-            // // svuoto la input bar quando invio
-            // this.net_msg.text = "";
+
+            // svuoto la input bar quando invio
+            this.new_msg.text = "";
+            
         },
         
     }
