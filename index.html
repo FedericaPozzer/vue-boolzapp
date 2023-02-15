@@ -162,6 +162,8 @@
                             <div class="input-group">
     
                                 <input 
+                                @keyup.enter="sendMsg()"
+                                v-model="new_msg.text"
                                 type="text" 
                                 class="form-control" 
                                 placeholder="Scrivi un messaggio"
@@ -178,9 +180,7 @@
                 </section>
 
             </main>
-        
         </div>
-
     </div>
 
 

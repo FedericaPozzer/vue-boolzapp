@@ -5,7 +5,6 @@
     // * Visualizzazione dinamica della lista contatti: tramite la direttiva v -for, visualizzare nome e immagine di ogni contatto
         // ? ok!
 
-
 // MILESTONE 2
     // * Visualizzazione dinamica dei messaggi: tramite la direttiva v -for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione
         // ? ok!
@@ -243,6 +242,12 @@ const app = Vue.createApp({
 
             selected_index : 0,
 
+            new_msg : {
+                date: '15/02/2023 17:15:00',
+                text: '',
+                status: 'sent'
+            }
+
         }
     },
 
@@ -253,18 +258,21 @@ const app = Vue.createApp({
         },
 
 
-        // TODO: from here -.-"
-        // receivedMessage() {
-        //     if (this.contacts[this.selected_index].messages.status == 'received') {
-        //         return (this.contacts[this.selected_index].messages.text)
-        //     }
-        // },
+        sendMsg() {
+            console.log(this.new_msg); // proxy
 
-        // sentMessage() {
-        //     if (contacts[selected_index].messages.status == 'sent') {
-        //         return (contacts[selected_index].messages.text)
-        //     }
-        // },
+            const copy_notProxy = {
+                ...this.new_msg,
+            }
+
+            this.new_msg.text.push(copy_notProxy);
+
+
+
+            // // svuoto la input bar quando invio
+            // this.net_msg.text = "";
+        },
+        
     }
 })
 app.mount("#my-app");
