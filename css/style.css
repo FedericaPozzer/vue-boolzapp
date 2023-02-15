@@ -169,19 +169,15 @@ img {
 
 /** MAIN - messages - main **/
 
-.msg-received,
-.msg-sent {
+.received {
+    background-color: var(--white);
     width: 30%;
 }
 
-.msg-received,
-.received {
-    background-color: var(--white);
-}
-
-.msg-sent,
 .sent {
     background-color: var(--lightgreen);
+    align-self: flex-end;
+    width: 30%;
 }
 
 .messages-main .time {
