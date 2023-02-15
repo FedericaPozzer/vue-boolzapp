@@ -60,7 +60,7 @@
 
                     </div>
 
-                    <div class="contacts-main">
+                    <div class="contacts-options">
 
                         <div class="notifications-bar d-flex">
                             <button class="btn">
@@ -71,29 +71,24 @@
                                 <p class="fw-lighter small text-decoration-underline">Attiva notifiche desktop</p>
                             </div>
                         </div>
-
+                        
                         <div class="search-bar p-1">
                             <div class="input-group input-group-sm my-1">
                                 <span class="input-group-text">
                                     <i class="fa-solid fa-magnifying-glass ms-1"></i>
                                 </span>
-                                <input 
-                                type="text" 
-                                class="form-control px-3 py-2 border-start-0" 
-                                placeholder="Cerca o inizia una nuova chat"
-                                aria-label="Sizing example input"
-                                aria-describedby="inputGroup-sizing-sm">
+                                <input type="text" class="form-control px-3 py-2 border-start-0" placeholder="Cerca o inizia una nuova chat"
+                                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                             </div>
-
+                        
                         </div>
 
+                    </div>
+
+                    <div class="contacts-main">
                         <nav>
                             <ul class="contacts-list ps-0">
-                                <!-- nope d-flex flex-column flex-grow-1 -->
-
-                                <!-- <img v-bind:src="movie.image" v-for="(movie, index) in movies"
-                                    v-bind:class="(index == selected_movie) ? 'thumb-active' : ''" v-on:click="go_to_img(index)" alt="thumbnail"> -->
- <!-- active.contact -->
+                    
                                 <li class="d-flex"
                                 v-for="(contact, i) of contacts"
                                 v-on:click="selectedContact(i)"

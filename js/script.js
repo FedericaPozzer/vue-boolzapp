@@ -8,6 +8,7 @@
 
 // MILESTONE 2
     // * Visualizzazione dinamica dei messaggi: tramite la direttiva v -for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione
+        // ? ok!
     // * Click sul contatto mostra la conversazione del contatto cliccato
         // ? ok!
 
@@ -186,7 +187,58 @@ const app = Vue.createApp({
                             status: 'received'
                         }
                     ],
-                }
+                },
+                // {
+                //     name: 'Federico',
+                //     avatar: '_7',
+                //     visible: true,
+                //     messages: [
+                //         {
+                //             date: '10/01/2020 15:30:55',
+                //             text: 'Fai gli auguri a Martina che è il suo compleanno!',
+                //             status: 'sent'
+                //         },
+                //         {
+                //             date: '10/01/2020 15:50:00',
+                //             text: 'Grazie per avermelo ricordato, le scrivo subito!',
+                //             status: 'received'
+                //         }
+                //     ],
+                // },
+                // {
+                //     name: 'Federico',
+                //     avatar: '_7',
+                //     visible: true,
+                //     messages: [
+                //         {
+                //             date: '10/01/2020 15:30:55',
+                //             text: 'Fai gli auguri a Martina che è il suo compleanno!',
+                //             status: 'sent'
+                //         },
+                //         {
+                //             date: '10/01/2020 15:50:00',
+                //             text: 'Grazie per avermelo ricordato, le scrivo subito!',
+                //             status: 'received'
+                //         }
+                //     ],
+                // },
+                // {
+                //     name: 'Federico',
+                //     avatar: '_7',
+                //     visible: true,
+                //     messages: [
+                //         {
+                //             date: '10/01/2020 15:30:55',
+                //             text: 'Fai gli auguri a Martina che è il suo compleanno!',
+                //             status: 'sent'
+                //         },
+                //         {
+                //             date: '10/01/2020 15:50:00',
+                //             text: 'Grazie per avermelo ricordato, le scrivo subito!',
+                //             status: 'received'
+                //         }
+                //     ],
+                // },
             ],
 
             selected_index : 0,

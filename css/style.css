@@ -41,6 +41,16 @@ img {
     background-color: var(--lightgrey);
 }
 
+/* Sizes */
+:root {
+    /* --headers-height: 9vh;  */
+    --headers-height: 5rem;
+    /* --options-height: 13.7vh; */
+    --options-height: 7.8rem;
+    /* --footer-height: 9vh; */
+    --footer-height: 5rem;
+}
+
 
 /********** MAIN - layout **********/
 
@@ -50,16 +60,26 @@ img {
 
 .main {
     height: 86vh;
-    overflow: hidden;
+    overflow: scroll;
 
     background-color: var(--beige);
-    /* debug */
-    /* border: 1px solid black;
-    background-color: palevioletred; */
 }
 
 .contacts-header {
     border-right: 1px solid var(--lightgrey);
+}
+
+.main .contacts-header,
+.main .messages-header {
+    height: var(--headers-height);
+}
+
+.contacts-options {
+    height: var(--options-height)
+}
+
+.contacts-main {
+    height: calc(100% - var(--headers-height) - var(--options-height));
 }
 
 .contacts-header-favicons,
@@ -81,44 +101,21 @@ img {
     font-size: 1.3rem;
 }
 
-.main .contacts-header,
-.main .messages-header {
-    height: 10%;
-    
-    /* debug */
-    /* background-color: aquamarine; */
-}
-
 .contacts-list {
     background-color: var(--white);
+    overflow: scroll;
 }
 
 .contacts-list li {
     border-bottom: 1px solid var(--lightgrey);
     cursor: pointer;
+    /* height: calc(100% - var(--headers-height) - var(--options-height)); */
 }
-
-.contacts-list:last-child {
-    /* flex-grow: 3; */
-    /* background-color: pink; */
-    /* debug aiut boh */
-    /* padding-bottom: 4.3rem; */
-}
-
-.main .contacts-main {
-    height: 90%;
-    overflow: scroll;
-
-    /* debug */
-    /* background-color: aqua; */
-}
-
-
 
 /***** MAIN *****/
 
 .main .messages-main {
-    height: 80%;
+    height: calc(100% - var(--headers-height) - var(--footer-height));
     overflow: scroll;
 
     background-image: url(../img/mine.jpg);
@@ -157,7 +154,7 @@ img {
 }
 
 .section-messages .messages-footer {
-    height: 10%;
+    height: var(--footer-height);
 
     /* debug */
     /* background-color: aquamarine; */
@@ -178,6 +175,7 @@ img {
     background-color: var(--lightgreen);
     align-self: flex-end;
     width: 30%;
+    margin-right: 3rem;
 }
 
 .messages-main .time {
