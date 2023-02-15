@@ -44,11 +44,14 @@ img {
 /* Sizes */
 :root {
     /* --headers-height: 9vh;  */
-    --headers-height: 5rem;
+    /* --headers-height: 5rem; */
+    --headers-height: 10%;
     /* --options-height: 13.7vh; */
-    --options-height: 7.8rem;
+    /* --options-height: 7.8rem; */
+    --options-height: 19,3%;
     /* --footer-height: 9vh; */
-    --footer-height: 5rem;
+    /* --footer-height: 5rem; */
+    --footer-height: 10%;
 }
 
 
