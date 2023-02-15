@@ -186,18 +186,32 @@ const app = Vue.createApp({
                         }
                     ],
                 }
-            ]
+            ],
 
-            
+            selected_index : 0,
 
         }
     },
 
     methods : {
         selectedContact(i) {
-            alert("click" + " " + i);
-            // non ho più idee
+                // alert("click" + " " + i);
+            this.selected_index = i;
         },
+
+
+        // TODO: from here -.-"
+        // receivedMessage() {
+        //     if (this.contacts[this.selected_index].messages.status == 'received') {
+        //         return (this.contacts[this.selected_index].messages.text)
+        //     }
+        // },
+
+        // sentMessage() {
+        //     if (contacts[selected_index].messages.status == 'sent') {
+        //         return (contacts[selected_index].messages.text)
+        //     }
+        // },
     }
 })
 app.mount("#my-app");

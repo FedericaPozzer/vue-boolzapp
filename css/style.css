@@ -99,6 +99,8 @@ img {
 }
 
 .contacts-list:last-child {
+    /* flex-grow: 3; */
+    /* background-color: pink; */
     /* debug aiut boh */
     /* padding-bottom: 4.3rem; */
 }

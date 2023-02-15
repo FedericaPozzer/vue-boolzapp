@@ -89,10 +89,15 @@
 
                         <nav>
                             <ul class="contacts-list ps-0">
+                                <!-- nope d-flex flex-column flex-grow-1 -->
+
+                                <!-- <img v-bind:src="movie.image" v-for="(movie, index) in movies"
+                                    v-bind:class="(index == selected_movie) ? 'thumb-active' : ''" v-on:click="go_to_img(index)" alt="thumbnail"> -->
  <!-- active.contact -->
                                 <li class="d-flex"
                                 v-for="(contact, i) of contacts"
-                                @click="selectedContact(i)">
+                                v-on:click="selectedContact(i)"
+                                v-bind:class="(i == selected_index) ? 'open-chat' : '' ">
                                     <div class="contact-avatar align-self-center ms-2">
                                         <img :src=" './img/avatar' + contact.avatar + '.jpg' " alt="">
                                     </div>
@@ -117,13 +122,14 @@
                         <nav class="navbar p-0">
                         
                             <div class="container-fluid">
-                                <a class="navbar-brand d-flex align-items-center" 
+                                <a class="navbar-brand d-flex align-items-center"
+                                
                                 href="#">
 
-                                    <img src="./img/avatar_1.jpg" alt="Logo" width="50" height="50">
+                                    <img :src=" './img/avatar' + contacts[selected_index].avatar + '.jpg' " alt="Logo" width="50" height="50">
 
                                     <div class="ms-3">
-                                        <p class="mb-0"> Michele </p>
+                                        <p class="mb-0"> {{ contacts[selected_index].name }} </p>
                                         <p class="fw-lighter small mb-0">Ultimo accesso oggi alle 12:00</p>
                                     </div>
 
@@ -142,8 +148,14 @@
                     <div class="messages-main">
 
                         <div>
-                            <div class="msg-received ms-5 my-2 rounded d-flex justify-content-between">
-                                <p class="mb-0 p-3">prova rec</p>
+                            <div class="msg-received ms-5 my-2 rounded d-flex justify-content-between"
+                            v-for="(message, index) in contacts[selected_index].messages">
+                                <!-- v-for="(message, index) in contacts[selected_index].messages" -->
+
+                             <!-- TODO: from here -.-" -->
+
+                                <p class="mb-0 p-3 received" v-bind="message.text.received"></p>
+                                <!-- <p class="mb-0 p-3"> {{ message.text }}</p> -->
                                 <p class="time align-self-end mb-1 me-1">15:30</p>
                             </div>
                         </div>
