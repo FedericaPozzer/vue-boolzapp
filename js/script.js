@@ -15,7 +15,7 @@
     // * Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
         // ? ok!
     // * Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo
-        // ? suppongo serva un set timeout.. sul keyup? MA devo anche creare un nuovo messaggio.. how?
+        // ? ok!
 
 // MILESTONE 4
     // * Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite(es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
@@ -314,14 +314,6 @@ const app = Vue.createApp({
                 text: '',
                 status: 'sent'
             },
-
-             // coso precompliato in risposta al mio messaggio
-            auto_answer : {
-                date: '15/02/2023 17:15:00',
-                text: 'Ok!',
-                status: 'received'
-            }
-
         }
     },
 
@@ -330,7 +322,8 @@ const app = Vue.createApp({
         selectedContact(i) {
                 // alert("click" + " " + i);
             this.selected_index = i;
-        },
+        }, // senza creare questa funzione potevo anche scrivere nell'html che on click "i = selected_index" e bom.
+
 
         // funzione per mandare un nuovo messaggio
         sendMsg() {
@@ -345,14 +338,14 @@ const app = Vue.createApp({
             let ciao = this.contacts[this.selected_index];
             ciao.messages.push(copy_notProxy);
 
-
-            
-
-            // io che tento invano di farmi rispondere da tizio
-            let auto_answer = this.contacts[this.selected_index];
-            auto_answer.messages.push(auto_answer);
-
-
+            // la risposta di tizio, dopo un secondo dal mio messaggio!
+            setTimeout(() => {
+                ciao.messages.push({
+                    date : "15/02/2023 17:15:01",
+                    text : "Ok!",
+                    status : "received"
+                });
+            }, 1000);
 
 
             // svuoto la input bar quando invio

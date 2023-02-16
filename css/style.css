@@ -194,3 +194,7 @@ img {
 .messages-footer i {
     color: grey;
 }
+
+.open-chat {
+    background-color: var(--lightgrey);
+}

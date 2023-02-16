@@ -93,6 +93,7 @@
                                 v-for="(contact, i) of contacts"
                                 v-on:click="selectedContact(i)"
                                 v-bind:class="(i == selected_index) ? 'open-chat' : '' ">
+
                                     <div class="contact-avatar align-self-center ms-2">
                                         <img :src=" './img/avatar' + contact.avatar + '.jpg' " alt="">
                                     </div>
@@ -100,9 +101,17 @@
                                     <div class="ms-2" >
                                         <p class="mb-0 mt-2"> {{ contact.name }} </p>
                                         <p class="mb-2 fw-lighter small">Ultimo messaggio inviato</p>
+                                        <!-- se voglio stampare l'ultimo messaggio: {{ contact.messages[contact.messages.length -1].text }} 
+                                        
+                                        il meno uno è perchè se l'array è lungo 3, il suo indice sarà 2. se è vuoto però crasha tutto perchè non eisste l'indice -1-->
+
+                                        <!-- quindi dico stampa questo codice solo se l'array dei contatti ha una lunghezza:
+                                        vado sopra nel p e metto l'if
+                                        v-if="contacts.messages.length" -->
                                     </div>
 
                                     <div class="ms-auto p-1 fw-lighter small">12:00</div>
+
                                 </li>
                             
                             </ul>
@@ -118,7 +127,6 @@
                         
                             <div class="container-fluid">
                                 <a class="navbar-brand d-flex align-items-center"
-                                
                                 href="#">
 
                                     <img :src=" './img/avatar' + contacts[selected_index].avatar + '.jpg' " alt="Logo" width="50" height="50">
@@ -146,6 +154,10 @@
                             <div class="ms-5 my-2 rounded d-flex justify-content-between"
                             v-for="(message, index) in contacts[selected_index].messages"
                             v-bind:class="(message.status == 'received') ? 'received' : 'sent'">
+                            <!-- qui potevo anche scrivere SOLO:
+                            v-bind:class="message.status">
+                            perchè la classe e lo status hanno lo stesso nome! -->
+                            
 
                                 <p class="mb-0 p-3"> {{ message.text }} </p>
                                 <p class="time align-self-end mb-1 me-1">15:30</p>
