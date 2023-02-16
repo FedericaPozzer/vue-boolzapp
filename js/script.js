@@ -19,6 +19,11 @@
 
 // MILESTONE 4
     // * Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite(es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
+        // ? ok!
+
+// MILESTONE 5 - opzionale
+    // * Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
+    // * Visualizzazione ora e ultimo messaggio inviato / ricevuto nella lista dei contatti
 
 
 
@@ -204,6 +209,7 @@ const app = Vue.createApp({
             // per la mia funzione di ricerca
             research : {
                 text : "",
+                // visible : true,
             }
         }
     },
@@ -249,22 +255,21 @@ const app = Vue.createApp({
             // alert("I'm searching" + this.research.text); -- ok!
             
             for (contact of this.contacts) {
+
                     // add toLowerCase() in the comparison to kill case sensitivity
                 if (contact.name.toLowerCase().includes(this.research.text.toLowerCase())) {
-                    console.log("ho trovato ciò che cerchi!");
-                    // return true;
-
-                    // let researchedContact = 
+                    // console.log("ho trovato ciò che cerchi!");
+                    contact.visible = true;
 
                 } else {
-                    console.log("nope");
-                    // return false;
+                    // console.log("nope");
+                    contact.visible = false;
                 }
             }
 
+            // svuoto la input bar quando invio
             this.research.text = "";
         }
     }
 })
 app.mount("#my-app");
-

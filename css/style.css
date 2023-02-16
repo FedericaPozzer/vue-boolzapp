@@ -134,6 +134,8 @@ img {
 .contacts-list li {
     border-bottom: 1px solid var(--lightgrey);
     cursor: pointer;
+
+    display: flex;
 }
 
 .open-chat {

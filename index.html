@@ -96,10 +96,12 @@
                         <nav>
                             <ul class="contacts-list ps-0 flex-grow-1">
                     
-                                <li class="d-flex"
+                                <!-- v-show non funzionava con il d-flex di bootstrap, dando il display flex dal css ho finalmente risolto! -->
+                                <li v-show="contact.visible"
                                 v-for="(contact, i) of contacts"
                                 v-on:click="selectedContact(i)"
                                 v-bind:class="(i == selected_index) ? 'open-chat' : '' ">
+
 
                                     <div class="contact-avatar align-self-center ms-2">
                                         <img :src=" './img/avatar' + contact.avatar + '.jpg' " alt="">
