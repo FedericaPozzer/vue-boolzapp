@@ -246,7 +246,19 @@ const app = Vue.createApp({
 
         // funzione per cercare tra i contatti - sia con la lente che premendo invio 
         researchFunction() {
-            alert("I'm searching" + this.research.text);
+            // alert("I'm searching" + this.research.text); -- ok!
+
+            for (contact of this.contacts) {
+                if (contact.name.includes(this.research.text)) {
+                    console.log("ho trovato ciò che cerchi!");
+                    // return true;
+                } else {
+                    console.log("nope");
+                    // return false;
+                }
+            }
+
+            this.research.text = "";
         }
         
     }
