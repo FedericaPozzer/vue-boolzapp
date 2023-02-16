@@ -20,7 +20,11 @@
         <link rel="stylesheet" href="./css/style.css">
 
     <!-- Vue JS -->
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+        <!-- CDN di riserva -->
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.global.min.js"></script>
+
+
     <!-- MY JS -->
         <!-- <script type="text/javascript" src="./js/script.js" defer></script> -->
 </head>
@@ -30,8 +34,11 @@
         <div class="container" id="container-main">
             
             <main class="main row row-2-cols">
-
+                
+                <!-- SEZIONE CONTATTI (SINISTRA) -->
                 <section class="col-4 section-contacts p-0">
+
+                        <!-- CONTATTI - Header -->
                     <div class="contacts-header d-flex">
 
                         <nav class="navbar">
@@ -60,6 +67,7 @@
 
                     </div>
 
+                        <!-- CONTATTI - Options -->
                     <div class="contacts-options">
 
                         <div class="notifications-bar d-flex">
@@ -92,6 +100,7 @@
 
                     </div>
 
+                        <!-- CONTATTI - Main -->
                     <div class="contacts-main">
                         <nav>
                             <ul class="contacts-list ps-0 flex-grow-1">
@@ -109,28 +118,27 @@
 
                                     <div class="ms-2" >
                                         <p class="mb-0 mt-2"> {{ contact.name }} </p>
-                                        <p class="mb-2 fw-lighter small">Ultimo messaggio inviato</p>
-                                        <!-- se voglio stampare l'ultimo messaggio: {{ contact.messages[contact.messages.length -1].text }} 
-                                        
-                                        il meno uno è perchè se l'array è lungo 3, il suo indice sarà 2. se è vuoto però crasha tutto perchè non eisste l'indice -1-->
-
-                                        <!-- quindi dico stampa questo codice solo se l'array dei contatti ha una lunghezza:
-                                        vado sopra nel p e metto l'if
-                                        v-if="contacts.messages.length" -->
+                                        <p class="mb-2 fw-lighter small"
+                                        v-if="contact.messages.length"> {{ contact.messages[contact.messages.length -1].text }} </p>
+                                        <!-- il -1 è perchè se l'array è lungo 3, il suo ultimo indice sarà 2. Se è vuoto però crasha tutto perchè non eisste l'indice -1.. e quindi dico "stampa questo codice solo se l'array dei contatti ha una lunghezza":
+                                        vado sopra nel p e metto l'if -> v-if="contact.messages.length" -->
                                     </div>
 
-                                    <div class="ms-auto p-1 fw-lighter small">12:00</div>
+                                    <div class="ms-auto p-1 fw-lighter smaller">{{ contact.messages[contact.messages.length -1].date }}</div>
 
                                 </li>
                             
                             </ul>
                         </nav>
                     </div>
+
                 </section>
                 
 
+                <!-- SEZIONE MESSAGGI (DESTRA) -->
                 <section class="col-8 section-messages p-0">
 
+                        <!-- MESSAGGI - Header -->
                     <div class="messages-header">
                         <nav class="navbar p-0">
                         
@@ -157,10 +165,13 @@
                         </nav>
                     </div>
 
+                        <!-- MESSAGGI - Main -->
                     <div class="messages-main">
 
+                        <!-- v-on:click="dropDownMenu()" -->
                         <div class="d-flex flex-column">
-                            <div class="ms-5 my-2 rounded d-flex justify-content-between"
+                            <div class="msg ms-5 my-2 rounded d-flex justify-content-between"
+                            v-on:click="dropDownMenu()"
                             v-for="(message, index) in contacts[selected_index].messages"
                             v-bind:class="(message.status == 'received') ? 'received' : 'sent'">
                             <!-- qui potevo anche scrivere SOLO:
@@ -169,13 +180,25 @@
                             
 
                                 <p class="mb-0 p-3"> {{ message.text }} </p>
+
+                                <i class="fa-solid fa-chevron-down ms-auto mt-2 position-relative">
+                                    <div class="blabla position-absolute">
+                                        <p class="mb-2">Message Info</p>
+                                        <p>Delete Message</p>
+                                    </div>
+                                </i>
+
                                 <p class="time align-self-end mb-1 me-1">15:30</p>
                            
                             </div>
+
+                            
+
                         </div>
 
                     </div>
 
+                        <!-- MESSAGGI - Footer -->
                     <div class="messages-footer d-flex justify-content-around align-items-center">
                         <div class="mx-2"> <i class="fa-regular fa-face-smile"></i> </div>
                         <div class="message-bar">

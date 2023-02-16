@@ -24,6 +24,7 @@
 // MILESTONE 5 - opzionale
     // * Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
     // * Visualizzazione ora e ultimo messaggio inviato / ricevuto nella lista dei contatti
+        // ? ok!
 
 
 
@@ -269,7 +270,12 @@ const app = Vue.createApp({
 
             // svuoto la input bar quando invio
             this.research.text = "";
-        }
+        },
+
+        // funzione per aprire la tendina al click del singolo messaggio
+        dropDownMenu() {
+            alert("clicked!");
+        },
     }
 })
 app.mount("#my-app");

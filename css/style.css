@@ -142,6 +142,11 @@ img {
     background-color: var(--lightgrey);
 }
 
+.smaller {
+    font-size: .4rem;
+    margin-top: auto;
+}
+
 
 /*************** MAIN - Section Messages ***************/
 
@@ -164,6 +169,16 @@ img {
     color: lightgray;
 }
 
+.messages-main .msg {
+    /* cursor: pointer; */
+}
+
+.msg .fa-chevron-down {
+    cursor: pointer;
+    /* display: none; */
+
+    color: var(--lightgrey);
+}
 
 /* Messages - footer */
 
@@ -195,3 +210,29 @@ img {
     width: 37%;
     margin-right: 3rem;
 }
+
+
+
+
+.blabla {
+    width: 170px;
+    /* height: 100px; */
+
+    background-color: var(--white);
+    border: 1px solid var(--lightgrey);
+
+    color: black;
+    font-size: .8rem;
+
+    padding: 1rem;
+
+    right: 0;
+
+    display: none;
+}
+
+.blabla p {
+    margin: 0;
+    cursor: pointer;
+}
+
