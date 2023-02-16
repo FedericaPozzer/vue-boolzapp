@@ -1,4 +1,4 @@
-/*** ALL ***/
+/*** UTILS / ALL ***/
 
 ul {
     list-style: none;
@@ -16,7 +16,7 @@ img {
     width: 100%;
 }
 
-/* Background */
+/* Background body */
 .background-bicolor {
     width: 100%;
     height: 100vh;
@@ -36,53 +36,44 @@ img {
     --lightgreen: #d5f9ba;
 }
 
-/* Specials */
-.active-contact {
-    background-color: var(--lightgrey);
-}
-
 /* Sizes */
 :root {
-    /* --headers-height: 9vh;  */
+    --headers-height: 9vh;
     /* --headers-height: 5rem; */
-    --headers-height: 10%;
-    /* --options-height: 13.7vh; */
+    /* --headers-height: 10%; */
+
+    --options-height: 13.8vh;
     /* --options-height: 7.8rem; */
-    --options-height: 19,3%;
-    /* --footer-height: 9vh; */
+    /* --options-height: 19,3%; */
+
+    --footer-height: 9vh;
     /* --footer-height: 5rem; */
-    --footer-height: 10%;
+    /* --footer-height: 10%; */
 }
 
 
-/********** MAIN - layout **********/
+/*************** MAIN - layout ***************/
 
 #container-main {
-    padding-top: 7vh;    
+    padding-top: 7vh;
 }
 
 .main {
     height: 86vh;
-    overflow: scroll;
-
     background-color: var(--beige);
 }
 
-.contacts-header {
-    border-right: 1px solid var(--lightgrey);
-}
 
+/*************** MAIN - Section Contacts ***************/
+
+/* Contacts - header */
 .main .contacts-header,
 .main .messages-header {
     height: var(--headers-height);
 }
 
-.contacts-options {
-    height: var(--options-height)
-}
-
-.contacts-main {
-    height: calc(100% - var(--headers-height) - var(--options-height));
+.contacts-header {
+    border-right: 1px solid var(--lightgrey);
 }
 
 .contacts-header-favicons,
@@ -90,8 +81,9 @@ img {
     color: var(--lightgrey);
 }
 
-.notifications-bar {
-    background-color: var(--lightblue);
+/* Contacts - options */
+.contacts-options {
+    height: var(--options-height)
 }
 
 .fa-bell-slash {
@@ -104,27 +96,9 @@ img {
     font-size: 1.3rem;
 }
 
-.contacts-list {
-    background-color: var(--white);
-    overflow: scroll;
+.notifications-bar {
+    background-color: var(--lightblue);
 }
-
-.contacts-list li {
-    border-bottom: 1px solid var(--lightgrey);
-    cursor: pointer;
-    /* height: calc(100% - var(--headers-height) - var(--options-height)); */
-}
-
-/***** MAIN *****/
-
-.main .messages-main {
-    height: calc(100% - var(--headers-height) - var(--footer-height));
-    overflow: scroll;
-
-    background-image: url(../img/mine.jpg);
-}
-
-/** Main - users **/
 
 .notifications-bar p {
     margin: .5rem;
@@ -132,58 +106,66 @@ img {
 
 .search-bar {
     background-color: var(--beige);
-
-    /* debug */
-    /* border: 1px solid black; */
-}
-
-.fa-magnifying-glass {
-    color: var(--lightgrey);
 }
 
 .input-group-text {
     background-color: var(--white);
 }
 
+.fa-magnifying-glass {
+    color: var(--lightgrey);
+}
+
+/* Contacts - main */
+.contacts-main {
+    height: calc(86vh - var(--headers-height) - var(--options-height));
+    overflow: auto;
+}
+
 .contact-avatar img {
     height: 2.5rem;
 }
 
+.contacts-list {
+    background-color: var(--white);
+}
 
-/** MAIN - messages **/
+.contacts-list li {
+    border-bottom: 1px solid var(--lightgrey);
+    cursor: pointer;
+}
 
+.open-chat {
+    background-color: var(--lightgrey);
+}
+
+
+/*************** MAIN - Section Messages ***************/
+
+.main .messages-main {
+    height: calc(86vh - var(--headers-height) - var(--footer-height));
+    overflow: auto;
+
+    background-image: url(../img/mine.jpg);
+}
+
+/* Messages - header */
 .messages-header .navbar {
     height: 100%;
 }
 
-.section-messages .messages-footer {
-    height: var(--footer-height);
-
-    /* debug */
-    /* background-color: aquamarine; */
-}
-
-.message-bar {
-    width: 80%;
-}
-
-/** MAIN - messages - main **/
-
-.received {
-    background-color: var(--white);
-    width: 37%;
-}
-
-.sent {
-    background-color: var(--lightgreen);
-    align-self: flex-end;
-    width: 37%;
-    margin-right: 3rem;
-}
+/* Messages - main */
 
 .messages-main .time {
     font-size: .7rem;
     color: lightgray;
+}
+
+
+/* Messages - footer */
+
+.section-messages .messages-footer {
+    height: var(--footer-height);
 }
 
 .messages-footer {
@@ -195,6 +177,18 @@ img {
     color: grey;
 }
 
-.open-chat {
-    background-color: var(--lightgrey);
+.message-bar {
+    width: 80%;
+}
+
+.received {
+    background-color: var(--white);
+    width: 37%;
+}
+
+.sent {
+    background-color: var(--lightgreen);
+    align-self: flex-end;
+    width: 37%;
+    margin-right: 3rem;
 }
