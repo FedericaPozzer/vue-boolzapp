@@ -75,9 +75,16 @@
                         <div class="search-bar p-1">
                             <div class="input-group input-group-sm my-1">
                                 <span class="input-group-text">
-                                    <i class="fa-solid fa-magnifying-glass ms-1"></i>
+                                    <i class="fa-solid fa-magnifying-glass ms-1"
+                                    v-on:click="researchFunction"></i>
                                 </span>
-                                <input type="text" class="form-control px-3 py-2 border-start-0" placeholder="Cerca o inizia una nuova chat"
+
+                                <input 
+                                type="text" 
+                                @keyup.enter="researchFunction"
+                                v-model="research.text"
+                                class="form-control px-3 py-2 border-start-0" 
+                                placeholder="Cerca o inizia una nuova chat"
                                 aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                             </div>
                         

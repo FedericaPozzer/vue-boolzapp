@@ -114,6 +114,7 @@ img {
 
 .fa-magnifying-glass {
     color: var(--lightgrey);
+    cursor: pointer;
 }
 
 /* Contacts - main */

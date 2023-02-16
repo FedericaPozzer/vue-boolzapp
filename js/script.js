@@ -48,72 +48,6 @@ const app = Vue.createApp({
                             text: 'Tutto fatto!',
                             status: 'received'
                         },
-
-
-
-
-
-
-                        {
-                            date: '10/01/2020 15:30:55',
-                            text: 'Hai portato a spasso il cane?',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 15:50:00',
-                            text: 'Ricordati di stendere i panni',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 16:15:22',
-                            text: 'Tutto fatto!',
-                            status: 'received'
-                        },
-                        {
-                            date: '10/01/2020 15:30:55',
-                            text: 'Hai portato a spasso il cane?',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 15:50:00',
-                            text: 'Ricordati di stendere i panni',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 16:15:22',
-                            text: 'Tutto fatto!',
-                            status: 'received'
-                        },
-                        {
-                            date: '10/01/2020 15:30:55',
-                            text: 'Hai portato a spasso il cane?',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 15:50:00',
-                            text: 'Ricordati di stendere i panni',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 16:15:22',
-                            text: 'Tutto fatto!',
-                            status: 'received'
-                        },
-                        {
-                            date: '10/01/2020 15:30:55',
-                            text: 'Hai portato a spasso il cane?',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 15:50:00',
-                            text: 'Ricordati di stendere i panni',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 16:15:22',
-                            text: 'Tutto fatto!',
-                            status: 'received'
-                        }
                     ],
                 },
                 {
@@ -255,65 +189,6 @@ const app = Vue.createApp({
                         }
                     ],
                 },
-
-
-
-
-
-
-
-                
-                {
-                    name: 'Federico',
-                    avatar: '_7',
-                    visible: true,
-                    messages: [
-                        {
-                            date: '10/01/2020 15:30:55',
-                            text: 'Fai gli auguri a Martina che è il suo compleanno!',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 15:50:00',
-                            text: 'Grazie per avermelo ricordato, le scrivo subito!',
-                            status: 'received'
-                        }
-                    ],
-                },
-                {
-                    name: 'Federico',
-                    avatar: '_7',
-                    visible: true,
-                    messages: [
-                        {
-                            date: '10/01/2020 15:30:55',
-                            text: 'Fai gli auguri a Martina che è il suo compleanno!',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 15:50:00',
-                            text: 'Grazie per avermelo ricordato, le scrivo subito!',
-                            status: 'received'
-                        }
-                    ],
-                },
-                {
-                    name: 'Federico',
-                    avatar: '_7',
-                    visible: true,
-                    messages: [
-                        {
-                            date: '10/01/2020 15:30:55',
-                            text: 'Fai gli auguri a Martina che è il suo compleanno!',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 15:50:00',
-                            text: 'Grazie per avermelo ricordato, le scrivo subito!',
-                            status: 'received'
-                        }
-                    ],
-                },
             ],
 
             // indice "di partenza"
@@ -321,10 +196,15 @@ const app = Vue.createApp({
 
             // coso vuoto in cui andrà il mio nuovo messaggio
             new_msg : {
-                date: '15/02/2023 17:15:00',
-                text: '',
-                status: 'sent'
+                date : '15/02/2023 17:15:00',
+                text : '',
+                status : 'sent'
             },
+
+            // per la mia funzione di ricerca
+            research : {
+                text : "",
+            }
         }
     },
 
@@ -363,6 +243,11 @@ const app = Vue.createApp({
             this.new_msg.text = "";
             
         },
+
+        // funzione per cercare tra i contatti - sia con la lente che premendo invio 
+        researchFunction() {
+            alert("I'm searching" + this.research.text);
+        }
         
     }
 })
