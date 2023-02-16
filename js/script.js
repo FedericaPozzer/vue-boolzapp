@@ -247,11 +247,15 @@ const app = Vue.createApp({
         // funzione per cercare tra i contatti - sia con la lente che premendo invio 
         researchFunction() {
             // alert("I'm searching" + this.research.text); -- ok!
-
+            
             for (contact of this.contacts) {
-                if (contact.name.includes(this.research.text)) {
+                    // add toLowerCase() in the comparison to kill case sensitivity
+                if (contact.name.toLowerCase().includes(this.research.text.toLowerCase())) {
                     console.log("ho trovato ciò che cerchi!");
                     // return true;
+
+                    // let researchedContact = 
+
                 } else {
                     console.log("nope");
                     // return false;
@@ -260,7 +264,7 @@ const app = Vue.createApp({
 
             this.research.text = "";
         }
-        
     }
 })
 app.mount("#my-app");
+
